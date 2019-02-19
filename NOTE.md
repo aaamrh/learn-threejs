@@ -1,5 +1,9 @@
 # Three.js
 
+> 学习资料
+> 模型查看工具： ParaView, Blender
+> 模型下载网页： https://www.cc.gatech.edu/projects/large_models/
+
 ### **四大组件**
 **1. 场景**
 ``` javascript
@@ -38,6 +42,17 @@
 
 ``` javascript
     THREE.WebGLRenderer()
+
+    renderer = new THREE.WebGLRenderer({
+        antialias:true // 抗锯齿
+    })
+
+    /* 屏幕大小改变时，模型进行自适应 */
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+    }
 ```
 
 **4. 几何体**
@@ -149,7 +164,7 @@ THREE.Light = function(color){}
 
 THREE.AmbientLight // 环境光, 就像阴天，不知道太阳在哪个方向，环境光的位置是没有意义的
 THREE.AreaLight //区域光
-THREE.DirectionalLight(hex, intensity) //方向光，没有衰减的平行光
+THREE.DirectionalLight(hex, intensity·) //方向光，没有衰减的平行光
 THREE.SpotLight // 聚光灯
 THREE.PointLight // 点光源
 ```
@@ -197,8 +212,18 @@ THREE.PointLight // 点光源
         }
     ) 
     console.log('load加载完先执行')
-```
 
+    function change(){
+        if(texture != null){
+            texture.repeat.x = texture.repeat.y = para.repeat;
+            texture.wrapS = texture.wrapT = para.wrap;
+            // 更新属性后要调用 needsUpdate 
+            texture.needsUpdate = true;
+        }
+    }
+```
+------
+## **模型加载**
 ```javascript
 
 ```

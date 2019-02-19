@@ -1,0 +1,36 @@
+{
+  "editor.tabSize": 2,
+  "files.autoSave": "afterDelay",
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#e91e63",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "?",
+      "color": "#03a9f4",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "todo",
+      "color": "#ff9800",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "*",
+      "color": "#4caf50",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    }
+  ]
+}
