@@ -125,7 +125,6 @@ var line = new THREE.Line(geometry, material, THREE.LineSegments);
 
 ### 坐标
 ```javascript
-
 var axisHelper = new THREE.AxisHelper(4);
 scene.add(axisHelper)
 
@@ -224,10 +223,45 @@ THREE.PointLight // 点光源
 ```
 ------
 ## **模型加载**
+> 7-1, 8-1
 ```javascript
 
 ```
 
-```javascript
+### OBJ模型详解
+    OBJ模型行关键字
+    - 顶点数据
+        v  几何体顶点
+        vt 贴图坐标点
+        vn 顶点法线
+        vp 参数空格顶点
+    - 自由形态曲线
+        deg 度
+        bmat 基础矩阵
+        step 步尺寸
+        cstype 曲线或表面类型
+
+
+### 鼠标选中物体
+``` javascript
+/* 
+    Raycaster 是用来实现拾取的一个简单类 
+    origin: 光线发射出去的地方
+    direction: 归一化的方向向量
+    near: 光线发射最近的距离
+    far: 光线发射最远的距离 
+*/
+THREE.Raycaster = function(origin, direction, near, far){}
+
+/* 
+    通过摄像机和鼠标位置更新射线
+    coords: 鼠标的位置，是一个归一化的设备坐标，必须在 -1 到 1 之间
+    camera: 光线起源的位置
+*/
+setFromCamera:function(coords, camera)
+
+/* 哪些对象和他相交 */
+intersectObject: function(objects, recursive){}
+
 
 ```
