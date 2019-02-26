@@ -11,7 +11,6 @@
 ```
 
 **2. 相机**
-
 > [相机参数详细说明](http://www.hewebgl.com/article/getarticle/59)
 
 ``` javascript
@@ -39,7 +38,6 @@
 ```
 
 **3. 渲染器**
-
 ``` javascript
     THREE.WebGLRenderer()
 
@@ -56,7 +54,6 @@
 ```
 
 **4. 几何体**
-
 ```javascript
     // 几何体就是显示在场景中的对象
     // 点，颜色，面
@@ -69,8 +66,9 @@
         new THREE.Vector3(0,0,10)
     )
 ```
-
 ------
+
+
 ```javascript
     // 初始化代码
     var scene = new THREE.Scene()
@@ -104,7 +102,7 @@
 
     render();   
 ```
-
+------
 ### 点
 ```javascript
 THREE.Vector3 = function(x,y,z){
@@ -263,5 +261,33 @@ setFromCamera:function(coords, camera)
 /* 哪些对象和他相交 */
 intersectObject: function(objects, recursive){}
 
+```
+
+
+### 阴影
+``` javascript
+
+/* 渲染器打开阴影 */
+renderer.shadowMap.enable
+/* 阴影效果 */
+renderer.shadowMap.type = THREE.BasicShadowMap;
+
+/* 
+    阴影效果的几种类型，区别在于使用不同算法计算阴影，效率、清晰度、锯齿不一样 
+
+    BasicShadowMap:0
+    PCFShadowMap:1, (Percentage Closer Filter)
+    PCFSoftShadowMap: 2
+
+*/
+
+/* 灯光生成阴影 */
+light.castShadow = true;
+
+/* 地面接收阴影 */
+plane.receiveShadow = true;
+
+/* 物体产生阴影 */
+mesh.castShadow = true;
 
 ```
